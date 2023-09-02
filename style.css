@@ -1,185 +1,86 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 body {
-  font-family: "Montserrat", sans-serif;
-  text-align: center;
-  zoom: 72%;
+	background: #1690A7;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	flex-direction: column;
 }
 
-nav {
-  background: rgb(17, 123, 221);
-  padding: 20px;
-  margin-bottom: 30px;
+*{
+	font-family: sans-serif;
+	box-sizing: border-box;
 }
 
-#app {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-h1 {
-  margin-bottom: 5px;
+form {
+	width: 500px;
+	border: 2px solid #ccc;
+	padding: 30px;
+	background: #fff;
+	border-radius: 15px;
 }
 
 h2 {
-  color: #fff;
+	text-align: center;
+	margin-bottom: 40px;
 }
 
 input {
-  margin-bottom: 1em;
+	display: block;
+	border: 2px solid #ccc;
+	width: 95%;
+	padding: 10px;
+	margin: 10px auto;
+	border-radius: 5px;
 }
-
-#imageContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.drop-zone {
-  width: 453px;
-  height: 906px;
-  border: 2px dashed #999;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  margin: 0 auto;
-  margin-bottom: 20px;
-}
-
-.splitImage {
-  object-fit: contain;
-  margin: 5px;
-  border: 1px solid orange;
-}
-
-.buttons {
-  margin-bottom: 10px;
+label {
+	color: #888;
+	font-size: 18px;
+	padding: 10px;
 }
 
 button {
-  background: rgb(17, 123, 221);
-  padding: 0.5rem 1rem;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  color: #fff;
-  cursor: pointer;
+	float: right;
+	background: #555;
+	padding: 10px 15px;
+	color: #fff;
+	border-radius: 5px;
+	margin-right: 10px;
+	border: none;
+}
+button:hover{
+	opacity: .7;
+}
+.error {
+   background: #F2DEDE;
+   color: #A94442;
+   padding: 10px;
+   width: 95%;
+   border-radius: 5px;
+   margin: 20px auto;
 }
 
-@media (max-width: 400px) {
-  .splitImage {
-    max-width: 200px;
-  }
+.success {
+   background: #D4EDDA;
+   color: #40754C;
+   padding: 10px;
+   width: 95%;
+   border-radius: 5px;
+   margin: 20px auto;
 }
 
-.highlight {
-  background: rgba(129, 218, 245, 0.1);
+h1 {
+	text-align: center;
+	color: #fff;
 }
 
-.hidden {
-  display: none;
+.ca {
+	font-size: 14px;
+	display: inline-block;
+	padding: 10px;
+	text-decoration: none;
+	color: #444;
 }
-
-.disable {
-  background: rgba(17, 122, 221, 0.396);
-}
-
-.cr-boundary {
-  border: 3px solid black;
-}
-
-/* ====================   log in ================================ */
-.login,
-.signup {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-}
-
-.form-section {
-  display: flex;
-  flex-direction: column;
-  align-items: self-start;
-  min-width: 500px;
-}
-
-.form-section h1 {
-  font-size: 48px;
-  margin-bottom: 16px;
-}
-
-.form-section p {
-  color: #666666;
-  font-size: 22px;
-}
-
-.login-subtitle {
-  margin-bottom: 38px;
-}
-
-.login-form,
-.signup-form {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 48px;
-}
-
-.login-form label,
-.signup-form label {
-  display: flex;
-  flex-direction: column;
-  align-items: self-start;
-  margin-bottom: 24px;
-  gap: 14px;
-}
-
-.login-form label p,
-.signup-form label p {
-  font-size: 22px;
-  font-weight: 600;
-  color: #000;
-}
-
-.login-form label input,
-.signup-form label input {
-  width: 500px;
-  border: 2px solid #d8d8d8;
-  border-radius: 6px;
-  padding: 18px 22px;
-  font-size: 20px;
-}
-
-.login-form label input:focus,
-.signup-form label input:focus {
-  outline: none;
-  border-color: #d7d7d7;
-}
-
-.login-form button,
-.signup-form button {
-  background: #04477b;
-  font-size: 22px;
-  padding: 18px;
-}
-
-.signup-link {
-  margin: 0 auto;
-  font-size: 18px;
-  color: #666;
-}
-
-.signup-link a {
-  color: #04477b;
-  text-decoration: none;
-  font-weight: 600;
-}
+.ca:hover {
+	text-decoration: underline;
+} 
