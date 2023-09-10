@@ -13,7 +13,7 @@ else
 {
    header("location:login.php");
 }
-include'lib/connection.php';
+include'../db_conn.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
