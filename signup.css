@@ -21,6 +21,7 @@ body {
   flex-direction: column;
   gap: 16px;
 }
+
 .signup h1 {
   text-align: center;
   margin-bottom: 56px;
