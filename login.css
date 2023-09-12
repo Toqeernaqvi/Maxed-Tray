@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+
+body {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.form-section h1 {
+  color: #082a44;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.login-subtitle {
+  color: #4f4f4f;
+  margin-bottom: 32px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.login-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.login-form label p {
+  color: #082a44;
+  font-weight: 600;
+}
+
+.login-form label input {
+  width: 500px;
+  border-radius: 9px;
+  color: #082a44;
+  background: #f5fafd;
+  border: 1px solid #dddddd;
+  padding: 16px 0;
+  padding-left: 16px;
+  font-size: 16px;
+}
+
+.login-form label input:focus {
+  outline: none;
+}
+
+.login-form label:nth-child(2) {
+  margin-bottom: 24px;
+}
+
+.login-form button {
+  padding: 16px 86px;
+  background: #0b4877;
+  border: none;
+  border-radius: 9px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  /* width: fit-content; */
+  /* margin: 0 auto; */
+  cursor: pointer;
+  margin-bottom: 32px;
+}
+
+.signup-link {
+  color: #4f4f4f;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.signup-link a {
+  text-decoration: none;
+  color: #065a93;
+  font-weight: 600;
+}

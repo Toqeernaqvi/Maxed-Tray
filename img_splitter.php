@@ -1,3 +1,16 @@
+<?php
+include'db_conn.php';
+SESSION_START();
+ if (isset($_SESSION['name']) && isset($_SESSION['id'])) {
+  // User is logged in, you can access their data
+  $name = $_SESSION['name'];
+  $id = $_SESSION['id'];
+} else {
+  // User is not logged in, you can redirect them to the login page
+  header("Location: login.php"); // Change 'login.php' to your login page URL
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,13 +31,16 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="img_splitter.css" />
 
     <title>Image Splitter</title>
   </head>
   <body>
     <nav>
       <h2>WWW.IMAGESPLITTER.COM</h2>
+       <a href="logout.php">(logout)</a>
+      <h2>Welcome <?= $name ?></h2>
+
     </nav>
     <div id="app">
       <h1>Split Your image</h1>

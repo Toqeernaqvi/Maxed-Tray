@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+
+body {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.signup h1 {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-section h2 {
+  color: #082a44;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.signup-subtitle {
+  color: #4f4f4f;
+  margin-bottom: 32px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 16px;
+}
+
+.signup-form input {
+  width: 500px;
+  border-radius: 22px;
+  color: #082a44;
+  background: #f5fafd;
+  border: 1px solid #f5fafd;
+  border: none;
+  padding: 20px 0;
+  padding-left: 20px;
+}
+
+.signup-form input:nth-child(4) {
+  margin-bottom: 24px;
+}
+
+.signup-form input:focus {
+  outline: none;
+  background: #eff9ff;
+}
+
+.signup-form p {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #858992;
+  font-size: 14px;
+  margin-bottom: 56px;
+}
+
+.signup-form p input {
+  width: 20px;
+  height: 20px;
+}
+
+.signup-form p a {
+  /* all: unset; */
+  text-decoration: none;
+  color: #2f80ed;
+  font-size: 14px;
+}
+
+.signup-form button {
+  padding: 20px 86px;
+  background: #0c8ac1;
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  width: fit-content;
+  margin: 0 auto;
+  cursor: pointer;
+  margin-bottom: 56px;
+}
+
+.signup-link {
+  font-size: 14px;
+  color: #4f4f4f;
+}
+
+.signup-link a {
+  text-decoration: none;
+  color: #065a93;
+  font-weight: 600;
+}

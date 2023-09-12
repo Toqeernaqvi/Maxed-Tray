@@ -103,14 +103,18 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   margin: 0 auto;
+}
+
+.signup {
+  flex-direction: column;
 }
 
 .form-section {
   display: flex;
   flex-direction: column;
   align-items: self-start;
-  min-width: 500px;
 }
 
 .form-section h1 {
@@ -152,7 +156,6 @@ button {
 
 .login-form label input,
 .signup-form label input {
-  width: 500px;
   border: 2px solid #d8d8d8;
   border-radius: 6px;
   padding: 18px 22px;
