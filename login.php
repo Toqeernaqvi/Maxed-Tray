@@ -33,7 +33,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 			if ($row['email'] === $email && $row['password'] === $pass) {
 				$_SESSION['name'] = $row['name'];
 				$_SESSION['id'] = $row['id'];
-				header("Location: index.html");
+				header("Location: img_splitter.php");
 				exit();
 			} else {
 				header("Location: index.php?error=Incorrect Email or Password");
@@ -45,5 +45,5 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 		}
 	}
 } else {
-	echo "its working";
+	header("Location: index.php");
 }

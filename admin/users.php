@@ -35,7 +35,7 @@ $result = $conn->query($sql);
         <tr>
           <th scope="col">Id</th>
           <th scope="col">Name</th>
-          <th scope="col">Pin</th>
+          <th scope="col">Registration Key</th>
           <th scope="col">Email</th>
           <th scope="col">Actions</th>
         </tr>
@@ -51,7 +51,7 @@ $result = $conn->query($sql);
               <td><?php echo $row["name"] ?></td>
               <td><?php echo $row["registration_key"] ?></td>
               <td><?php echo $row["email"] ?></td>
-              <td><button class="btn btn-primary" data-toggle="modal" data-target="#updateModal" data-userid="1">Update</button></td>
+              <td><button class="btn btn-primary" data-toggle="modal" data-target="#updateModal" data-userid="<?php echo $row['id']; ?>">Update</button></td>
               <td><button class="btn btn-primary" data-toggle="modal" data-target="#createModal" data-userid="1">Create</button></td>
             </tr>
         <?php
@@ -77,7 +77,7 @@ $result = $conn->query($sql);
         </div>
         <div class="modal-body">
           <!-- Form to update user information -->
-          <form id="updateForm">
+          <form id="updateForm" action="update-user.php" method="post">
             <div class="form-group">
               <label for="name">Name:</label>
               <input type="text" class="form-control" id="name" name="name">
@@ -86,13 +86,20 @@ $result = $conn->query($sql);
               <label for="password">Password:</label>
               <input type="password" class="form-control" id="password" name="password">
             </div>
-            <input type="hidden" id="userId" name="userId">
-          </form>
+            <div class="form-group">
+              <label for="registration_key">Registration Key:</label>
+              <input type="password" class="form-control" id="registration_key" name="registration_key">
+            </div>
+            <input type="hidden" id="userId" name="userId" value="<?php echo $row["id"] ?>">
+        
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" id="updateButton">Update</button>
+          </div>
+        </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" id="updateButton">Update</button>
-        </div>
+   
       </div>
     </div>
   </div>
@@ -110,21 +117,20 @@ $result = $conn->query($sql);
         </div>
         <div class="modal-body">
           <!-- Form to create user information -->
-          <form id="updateForm">
+          <form id="updateForm" action="create-user.php" method="post">
             <div class="form-group">
               <label for="name">Email:</label>
               <input type="text" class="form-control" id="email" name="email">
             </div>
-            <div class="form-group">
-              <label for="registration_key">Registration Key:</label>
-              <input type="text" class="form-control" id="registration_key" name="registration_key">
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary" id="updateButton">Create</button>
             </div>
+
           </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" id="updateButton">Create</button>
-        </div>
+  
       </div>
     </div>
   </div>

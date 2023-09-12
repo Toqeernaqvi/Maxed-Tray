@@ -1,49 +1,3 @@
-<!-- <!DOCTYPE html>
-<html>
-
-<head>
-     <title>SIGN UP</title>
-     <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-
-<body>
-     <form action="signup-check.php" method="post">
-          <h2>SIGN UP</h2>
-          <?php if (isset($_GET['error'])) { ?>
-               <p class="error"><?php echo $_GET['error']; ?></p>
-          <?php } ?>
-
-          <?php if (isset($_GET['success'])) { ?>
-               <p class="success"><?php echo $_GET['success']; ?></p>
-          <?php } ?>
-
-          <label>Name</label>
-          <?php if (isset($_GET['name'])) { ?>
-               <input type="text" name="name" placeholder="Name" value="<?php echo $_GET['name']; ?>"><br>
-          <?php } else { ?>
-               <input type="text" name="name" placeholder="Name"><br>
-          <?php } ?>
-
-          <label>Email</label>
-          <input type="email" name="email" placeholder="email"><br>
-
-          <label>Password</label>
-          <input type="password" name="password" placeholder="Password"><br>
-
-          <label>Confirm Password</label>
-          <input type="cpassword" name="cpassword" placeholder="cPassword"><br>
-
-
-          <label>Registration Key</label>
-          <input type="text" name="registration_key" placeholder="Registration Key"><br>
-
-          <button type="submit">Sign Up</button>
-          <a href="index.html" class="ca">Already have an account?</a>
-     </form>
-</body>
-
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -64,21 +18,33 @@
         <p class="signup-subtitle">
           Please create your new account to continue.
         </p>
-        <form class="signup-form">
+
+        <?php if (isset($_GET['error'])) { ?>
+               <p class="error"><?php echo $_GET['error']; ?></p>
+          <?php } ?>
+
+          <?php if (isset($_GET['success'])) { ?>
+               <p class="success"><?php echo $_GET['success']; ?></p>
+          <?php } ?>
+
+        <form class="signup-form" action="signup-check.php" method="post">
           
-            <input type="text" placeholder="Full Name" />
+            <input type="text" placeholder="Full Name"  name="name" />
           
-            <input type="email" placeholder="Email Address" />
+            <input type="email" placeholder="Email Address"  name="email" />
           
-            <input type="password" placeholder="Password" />
-          
-            <input type="password" placeholder="Confirm password" />
+            
+            <input type="password" placeholder="Password"   name="password" />
+            
+            <input type="password" placeholder="Confirm password"   name="cpassword"/>
+            
+            <input type="text"  name="registration_key" placeholder="Registration Key"   name="cpassword"/>
 
             <p>
               <input type="checkbox">
               <small>By Continuing you agree to our  <a href="#">Terms of conditions</a> &<a href="#"> Privacy policy</a></small>
             </p>
-          <button>Sign up</button>
+            <button type="submit">Sign Up</button>
         </form>
         <p class="signup-link">
           Already have an account? <a href="./index.php">Log in</a>
