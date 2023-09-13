@@ -27,7 +27,7 @@
                <p class="success"><?php echo $_GET['success']; ?></p>
           <?php } ?>
 
-        <form class="signup-form" action="signup-check.php" method="post">
+        <form class="signup-form" action="signup-backend.php" method="post">
           
             <input type="text" placeholder="Full Name"  name="name" />
           
@@ -44,7 +44,7 @@
               <input type="checkbox">
               <small>By Continuing you agree to our  <a href="#">Terms of conditions</a> &<a href="#"> Privacy policy</a></small>
             </p>
-            <button type="submit">Sign Up</button>
+            <button type="submit" >Sign Up</button>
         </form>
         <p class="signup-link">
           Already have an account? <a href="./index.php">Log in</a>
