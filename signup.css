@@ -52,14 +52,19 @@ body {
   gap: 16px;
 }
 
+.error-msg {
+  color: rgb(255, 80, 41);
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
 .signup-form input {
   width: 500px;
   border-radius: 22px;
   color: #082a44;
   background: #f5fafd;
-  border: 1px solid #f5fafd;
-  border: none;
   padding: 20px 0;
+  border: 1px solid #f5fafd;
   padding-left: 20px;
 }
 
@@ -86,8 +91,21 @@ body {
   height: 20px;
 }
 
+.pass-container,
+.cpass-container {
+  position: relative;
+}
+
+.pass-container img,
+.cpass-container img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 20px;
+  top: 18px;
+}
+
 .signup-form p a {
-  /* all: unset; */
   text-decoration: none;
   color: #2f80ed;
   font-size: 14px;
@@ -116,4 +134,12 @@ body {
   text-decoration: none;
   color: #065a93;
   font-weight: 600;
+}
+
+.error {
+  border: 1px solid red !important;
+}
+
+.hidden {
+  display: none;
 }
