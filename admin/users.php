@@ -23,10 +23,14 @@ $result = $conn->query($sql);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="css/pending_orders.css">
+  <script src="js/script.js"></script>
 
 </head>
 
 <body>
+  <div class="container">
+    <?php if (isset($_GET['success'])) { ?><p class="success bg-warning" id="successMessage"><?php echo $_GET['success']; ?></p><?php } ?>
+  </div>
 
   <div class="container pendingbody">
     <h5>All Users</h5>
@@ -88,18 +92,18 @@ $result = $conn->query($sql);
             </div>
             <div class="form-group">
               <label for="registration_key">Registration Key:</label>
-              <input type="password" class="form-control" id="registration_key" name="registration_key">
+              <input type="text" class="form-control" id="registration_key" name="registration_key">
             </div>
             <input type="hidden" id="userId" name="userId" value="<?php echo $row["id"] ?>">
-        
 
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary" id="updateButton">Update</button>
-          </div>
-        </form>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary" id="updateButton">Update</button>
+            </div>
+          </form>
         </div>
-   
+
       </div>
     </div>
   </div>
@@ -120,7 +124,7 @@ $result = $conn->query($sql);
           <form id="updateForm" action="create-user.php" method="post">
             <div class="form-group">
               <label for="name">Email:</label>
-              <input type="text" class="form-control" id="email" name="email">
+              <input type="email" class="form-control" id="email" name="email">
             </div>
 
             <div class="modal-footer">
@@ -130,7 +134,7 @@ $result = $conn->query($sql);
 
           </form>
         </div>
-  
+
       </div>
     </div>
   </div>
@@ -172,6 +176,16 @@ $result = $conn->query($sql);
         });
       });
     });
+
+
+    // Add JavaScript to hide the success message after 5 seconds
+    setTimeout(function() {
+      console.log("working...");
+      var successMessage = document.getElementById('successMessage');
+      if (successMessage) {
+        successMessage.style.display = 'none';
+      }
+    }, 5000); // 5000 milliseconds = 5 seconds
   </script>
 
 
