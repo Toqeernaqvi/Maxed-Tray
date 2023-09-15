@@ -27,8 +27,8 @@ signupForm.addEventListener("submit", (e) => {
     e.preventDefault();
   }
 
-  window.localStorage.setItem("email", JSON.stringify(email.value));
-  window.localStorage.setItem("password", JSON.stringify(password.value));
+  window.localStorage.setItem("email", email.value);
+  window.localStorage.setItem("password", password.value);
 });
 
 // Password visibility

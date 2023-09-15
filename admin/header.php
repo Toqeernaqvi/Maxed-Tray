@@ -1,9 +1,4 @@
-<?php
-include'../db_conn.php';
-$sql = "SELECT * FROM orders where status='pending'";
-$result = $conn -> query ($sql);
-
-?>
+<?php include'../db_conn.php'; ?>
 
 <!DOCTYPE html>
 <html>
@@ -12,12 +7,6 @@ $result = $conn -> query ($sql);
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!--css link-->
-	<!-- <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
-      crossorigin="anonymous"
-    /> -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
@@ -29,7 +18,7 @@ $result = $conn -> query ($sql);
 	<section class="header" id="header">
 		<i class="fas fa-bars fixed" onclick="openside()"></i>
 		<div class="line-fixed">Admin Panel</div>
-		<a href="logout.php">(logout)</a>
+		<a class="bg-dark" href="logout.php">(logout)</a>
 	</section>
 
 	<div class="sidenav" id="sidenav">

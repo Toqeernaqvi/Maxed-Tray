@@ -34,6 +34,8 @@ $result = $conn->query($sql);
 
   <div class="container pendingbody">
     <h5>All Users</h5>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#createModal">Create</button>
+
     <table class="table">
       <thead>
         <tr>
@@ -56,7 +58,6 @@ $result = $conn->query($sql);
               <td><?php echo $row["registration_key"] ?></td>
               <td><?php echo $row["email"] ?></td>
               <td><button class="btn btn-primary" data-toggle="modal" data-target="#updateModal" data-userid="<?php echo $row['id']; ?>">Update</button></td>
-              <td><button class="btn btn-primary" data-toggle="modal" data-target="#createModal" data-userid="1">Create</button></td>
             </tr>
         <?php
           }
