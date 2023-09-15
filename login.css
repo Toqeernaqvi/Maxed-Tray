@@ -27,6 +27,12 @@ body {
   margin-bottom: 32px;
 }
 
+.error-msg {
+  color: rgb(255, 80, 41);
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
 .login-form {
   display: flex;
   flex-direction: column;
@@ -64,6 +70,18 @@ body {
   margin-bottom: 24px;
 }
 
+.pass-container {
+  position: relative;
+}
+
+.pass-container img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 20px;
+  top: 38px;
+}
+
 .login-form button {
   padding: 16px 86px;
   background: #0b4877;
@@ -88,4 +106,12 @@ body {
   text-decoration: none;
   color: #065a93;
   font-weight: 600;
+}
+
+.hidden {
+  display: none;
+}
+
+.error {
+  border: 1px solid red !important;
 }

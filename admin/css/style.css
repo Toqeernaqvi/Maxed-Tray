@@ -6,46 +6,92 @@ body {
   height: 100px;
   background-color: white;
   transition: 0.3s;
+  position: fixed;
 }
 .sidenav {
-  height: 100%;
-  width: 0px;
-  background-color: #0e1a35;
+  height: 100vh;
+  width: 250px;
+  background-color: #04477b;
   position: fixed;
   z-index: 1;
   left: 0;
   overflow: hidden;
   transition: 0.3s;
+  /* position: relative; */
 }
-.sidenav ul li {
-  padding-top: 10px;
-  padding-left: 30px;
+
+.admin-heading {
+  color: #fff;
+  margin-top: 20px;
+  font-size: 28px;
+  text-align: center;
+}
+.sidenav ul {
+  padding-top: 30px;
+  /* display: flex;
+  justify-content: space-between; */
+  width: 100%;
+  /* height: 50%; */
+}
+
+.sidenav ul .nav-link {
   font-size: 20px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  background: #176789;
+  position: relative;
+  color: #fff;
+}
+.sidenav ul .nav-link::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 20px;
+  background: #52ceb7;
 }
 .sidenav ul li a {
-  color: white;
+  color: rgb(228, 228, 228);
+  font-size: 20px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  position: relative;
 }
+
+.logout {
+  position: absolute;
+  top: 0;
+}
+
 .fixed {
   padding: 30px;
   /*padding-left: 300px;*/
   font-size: 25px;
 }
+
 i {
   cursor: pointer;
   margin-right: 10px;
 }
+
 p {
   transition: 0.3s;
 }
+
 .line-fixed {
   display: inline;
   padding-left: 10px;
   font-weight: 700;
   font-size: 25px !important;
 }
+
 .fixed-logo {
   width: 55px;
 }
-a.nav-link:hover {
-  color: yellow;
+
+.hidden {
+  display: none;
 }

@@ -2,5 +2,15 @@
   color: red !important;
 }
 .pendingbody {
-  padding-top: 30px;
+  padding-top: 100px;
+}
+.create-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.user-page {
+  margin-left: 250px;
 }

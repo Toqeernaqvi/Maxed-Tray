@@ -16,19 +16,23 @@
 		<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<section class="header" id="header">
+	<!-- <section class="header" id="header">
 		<i class="fas fa-bars fixed" onclick="openside()"></i>
 		<div class="line-fixed">Admin Panel</div>
 		<a class="bg-dark" href="logout.php">(logout)</a>
-	</section>
+	</section> -->
 
 	<div class="sidenav" id="sidenav">
+		<h1 class=" admin-heading">Admin Panel</h1>
 		<ul class="navbar-nav">
-		   <li class="nav-item">
+		   <!-- <li class="nav-item">
 				<a class="nav-link d" href="Home.php">Dashboard</a>
-			</li>
+			</li> -->
 			<li class="nav-item">
 				<a class="nav-link u" href="users.php">Users</a>
+			</li>
+			<li class="nav-item">
+			<a class="" href="logout.php">Logout</a>
 			</li>
 	</div>
 	<?php

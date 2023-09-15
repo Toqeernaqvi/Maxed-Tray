@@ -28,14 +28,16 @@ $result = $conn->query($sql);
 
 </head>
 
-<body>
+<body class="user-page">
   <div class="container">
     <?php if (isset($_GET['success'])) { ?><p class="success bg-warning" id="successMessage"><?php echo $_GET['success']; ?></p><?php } ?>
   </div>
 
   <div class="container pendingbody">
-    <h5>All Users</h5>
-    <button class="btn btn-primary" data-toggle="modal" data-target="#createModal">Create</button>
+    <div class="create-btn-container"> 
+      <h5>All Users</h5>
+      <button class="btn btn-primary" data-toggle="modal" data-target="#createModal">Create</button>
+    </div>
 
     <table class="table">
       <thead>
