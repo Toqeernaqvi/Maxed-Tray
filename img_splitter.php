@@ -37,10 +37,14 @@ SESSION_START();
   </head>
   <body>
     <nav>
-      <h2>WWW.IMAGESPLITTER.COM</h2>
-       <a href="logout.php">(logout)</a>
-      <h2>Welcome <?= $name ?></h2>
-
+      <h1 class="logo">Maxed Tray</h1>
+       <div>
+        <div>
+          <img src="./assets/icons/user.svg" alt="user icon">
+          <h2><?= $name ?></h2>
+        </div>
+       <a href="logout.php" class="logout">Logout</a>
+       </div>
     </nav>
     <div id="app">
       <h1>Split Your image</h1>

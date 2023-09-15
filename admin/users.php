@@ -33,16 +33,16 @@ $result = $conn->query($sql);
     <?php if (isset($_GET['success'])) { ?><p class="success bg-warning" id="successMessage"><?php echo $_GET['success']; ?></p><?php } ?>
   </div>
 
-  <div class="container pendingbody">
+  <div class="container pendingbody ml-4">
     <div class="create-btn-container"> 
-      <h5>All Users</h5>
+      <h5>All Customers</h5>
       <button class="btn btn-primary" data-toggle="modal" data-target="#createModal">Create</button>
     </div>
 
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Id</th>
+          <!-- <th scope="col">ID</th> -->
           <th scope="col">Name</th>
           <th scope="col">Registration Key</th>
           <th scope="col">Email</th>
@@ -58,7 +58,7 @@ $result = $conn->query($sql);
 
 
             <tr>
-              <td><?php echo $row["id"] ?></td>
+              <!-- <td><?php echo $row["id"] ?></td> -->
               <td><?php echo $row["name"] ?></td>
               <td><?php echo $row["registration_key"] ?></td>
               <td><?php echo $row["email"] ?></td>
