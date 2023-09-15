@@ -11,7 +11,7 @@ if (isset($_SESSION['auth'])) {
 include 'header.php';
 include '../db_conn.php';
 
-$sql = "SELECT * FROM users";
+$sql = "SELECT * FROM users where status = '1' and role != 'admin'";
 $result = $conn->query($sql);
 ?>
 <!DOCTYPE html>
@@ -54,14 +54,17 @@ $result = $conn->query($sql);
           while ($row = mysqli_fetch_assoc($result)) {
         ?>
 
-        
+
             <tr>
               <td><?php echo $row["id"] ?></td>
               <td><?php echo $row["name"] ?></td>
               <td><?php echo $row["registration_key"] ?></td>
               <td><?php echo $row["email"] ?></td>
-        
-              <td><button class="btn btn-primary" data-toggle="modal" data-target="#updateModal" data-userid="<?php echo $row['id']; ?>">Update</button></td>
+
+              <td>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#updateModal" data-userid="<?php echo $row['id']; ?>">Update</button>
+                <button class="btn btn-danger" id="deleteUser" data-userid="<?php echo $row['id']; ?>">Delete</button>
+              </td>
             </tr>
         <?php
           }
@@ -100,7 +103,7 @@ $result = $conn->query($sql);
               <input type="text" class="form-control" id="registration_key" name="registration_key">
             </div>
             <div class="form-group">
-            <input type="hidden" class="form-control" id="userId" name="userId">
+              <input type="hidden" class="form-control" id="userId" name="userId">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -147,24 +150,42 @@ $result = $conn->query($sql);
 
   <!-- portion 2 -->
   <script>
-     $('.btn-primary').on('click', function() {
-        var userId = $(this).data("userid");
-        var name = $(this).closest('tr').find('td:eq(1)').text();
-        // var password = $(this).closest('tr').find('td:eq(4)').text();
-        var registration_key = $(this).closest('tr').find('td:eq(2)').text();
+    // populate data in update module
+    $('.btn-primary').on('click', function() {
+      var userId = $(this).data("userid");
+      var name = $(this).closest('tr').find('td:eq(1)').text();
+      // var password = $(this).closest('tr').find('td:eq(4)').text();
+      var registration_key = $(this).closest('tr').find('td:eq(2)').text();
 
-        // Populate the form fields with data
+      // Populate the form fields with data
 
-        $('#userId').val(userId);
-        $('#name').val(name);
-        // $('#password').val(password);
-        $('#registration_key').val(registration_key);
+      $('#userId').val(userId);
+      $('#name').val(name);
+      // $('#password').val(password);
+      $('#registration_key').val(registration_key);
     });
 
 
-     
+    //  delete use r request
+    $(".btn-danger").click(function() {
+      var userId = $(this).data("userid");
 
-
+      $.ajax({
+        type: "POST", // You can use POST or GET as per your needs
+        url: "delete.php",
+        data: {
+          userId: userId
+        },
+        success: function(response) {
+          alert("User deleted successfully.")
+          window.location.reload();
+        },
+        error: function() {
+          // Handle AJAX errors here
+          alert("An error occurred while processing your request.");
+        }
+      });
+    });
 
     // Add JavaScript to hide the success message after 5 seconds
     setTimeout(function() {

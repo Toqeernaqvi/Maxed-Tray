@@ -31,7 +31,7 @@ if ( isset($_POST['name']) && isset($_POST['password']) &&
 		$pass = md5($pass);
 
 		// Build the SQL query
-		$sql = "SELECT id FROM users WHERE email = '$email' AND registration_key = '$registration_key'";
+		$sql = "SELECT id FROM users WHERE email = '$email' AND registration_key = '$registration_key' AND status = '1'";
 		$result = mysqli_query($conn, $sql);
 
 		if (mysqli_num_rows($result) == 0) {
@@ -47,11 +47,13 @@ if ( isset($_POST['name']) && isset($_POST['password']) &&
     mysqli_stmt_bind_param($stmt, "sssi", $pass, $name, $email, $user_id);
 
     if (mysqli_stmt_execute($stmt)) {
-        header("Location: index.php?success=Your account has been created successfully");
-        exit();
+			$_SESSION['name'] = $name;
+			$_SESSION['id'] = $user_id;
+			header("Location: img_splitter.php");
+			exit();
     } else {
-        header("Location: signup.php?error=unknown error occurred");
-        exit();
+			header("Location: signup.php?error=unknown error occurred");
+			exit();
     }
 	}
 	// Close the database connection when done
