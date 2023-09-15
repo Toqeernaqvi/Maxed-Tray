@@ -24,6 +24,7 @@ $result = $conn->query($sql);
   <title>Document</title>
   <link rel="stylesheet" href="css/pending_orders.css">
   <script src="js/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 
@@ -52,11 +53,14 @@ $result = $conn->query($sql);
           // output data of each row
           while ($row = mysqli_fetch_assoc($result)) {
         ?>
+
+        
             <tr>
               <td><?php echo $row["id"] ?></td>
               <td><?php echo $row["name"] ?></td>
               <td><?php echo $row["registration_key"] ?></td>
               <td><?php echo $row["email"] ?></td>
+        
               <td><button class="btn btn-primary" data-toggle="modal" data-target="#updateModal" data-userid="<?php echo $row['id']; ?>">Update</button></td>
             </tr>
         <?php
@@ -85,22 +89,22 @@ $result = $conn->query($sql);
           <form id="updateForm" action="update-user.php" method="post">
             <div class="form-group">
               <label for="name">Name:</label>
-              <input type="text" class="form-control" id="name" name="name">
+              <input type="text" class="form-control" name="name" id="name">
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="password">Password:</label>
-              <input type="password" class="form-control" id="password" name="password">
-            </div>
+              <input type="password" class="form-control" name="password" id="password">
+            </div> -->
             <div class="form-group">
               <label for="registration_key">Registration Key:</label>
               <input type="text" class="form-control" id="registration_key" name="registration_key">
             </div>
-            <input type="hidden" id="userId" name="userId" value="<?php echo $row["id"] ?>">
-
-
+            <div class="form-group">
+            <input type="hidden" class="form-control" id="userId" name="userId">
+            </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary" id="updateButton">Update</button>
+              <button type="submit" class="btn btn-info" id="updateButton">Submit</button>
             </div>
           </form>
         </div>
@@ -122,7 +126,7 @@ $result = $conn->query($sql);
         </div>
         <div class="modal-body">
           <!-- Form to create user information -->
-          <form id="updateForm" action="create-user.php" method="post">
+          <form id="createForm" action="create-user.php" method="post">
             <div class="form-group">
               <label for="name">Email:</label>
               <input type="email" class="form-control" id="email" name="email">
@@ -143,40 +147,23 @@ $result = $conn->query($sql);
 
   <!-- portion 2 -->
   <script>
-    $(document).ready(function() {
-      // Function to populate the modal with user data when the "Update" button is clicked
-      $('.btn-primary').on('click', function() {
-        var userId = $(this).data('userid');
-        var name = $(this).closest('tr').find('td:eq(0)').text();
-        var password = $(this).closest('tr').find('td:eq(1)').text();
+     $('.btn-primary').on('click', function() {
+        var userId = $(this).data("userid");
+        var name = $(this).closest('tr').find('td:eq(1)').text();
+        // var password = $(this).closest('tr').find('td:eq(4)').text();
+        var registration_key = $(this).closest('tr').find('td:eq(2)').text();
+
+        // Populate the form fields with data
 
         $('#userId').val(userId);
         $('#name').val(name);
-        $('#password').val(password);
-      });
-
-      // Function to update user information when the "Update" button in the modal is clicked
-      $('#updateButton').on('click', function() {
-        var formData = $('#updateForm').serialize();
-
-        // Send the form data to a PHP script for processing
-        $.ajax({
-          url: 'update_user.php', // Replace with your PHP script's URL
-          method: 'POST',
-          data: formData,
-          success: function(response) {
-            // Handle the response from the PHP script (e.g., display a success message)
-            console.log(response);
-            // Close the modal
-            $('#updateModal').modal('hide');
-          },
-          error: function(error) {
-            // Handle any errors that occur during the AJAX request
-            console.error(error);
-          }
-        });
-      });
+        // $('#password').val(password);
+        $('#registration_key').val(registration_key);
     });
+
+
+     
+
 
 
     // Add JavaScript to hide the success message after 5 seconds
