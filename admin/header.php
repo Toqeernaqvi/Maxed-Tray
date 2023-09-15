@@ -6,28 +6,33 @@
 	<title>Admin</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!--css link-->
+	<!--Bootstrap  link-->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/media.css">
+
+		<!-- Custom Stylesheet Link -->
+		<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<section class="header" id="header">
+	<!-- <section class="header" id="header">
 		<i class="fas fa-bars fixed" onclick="openside()"></i>
 		<div class="line-fixed">Admin Panel</div>
 		<a class="bg-dark" href="logout.php">(logout)</a>
-	</section>
+	</section> -->
 
 	<div class="sidenav" id="sidenav">
+		<h1 class=" admin-heading">Admin Panel</h1>
 		<ul class="navbar-nav">
-		   <li class="nav-item">
+		   <!-- <li class="nav-item">
 				<a class="nav-link d" href="Home.php">Dashboard</a>
-			</li>
+			</li> -->
 			<li class="nav-item">
 				<a class="nav-link u" href="users.php">Users</a>
+			</li>
+			<li class="nav-item">
+			<a class="" href="logout.php">Logout</a>
 			</li>
 	</div>
 	<?php

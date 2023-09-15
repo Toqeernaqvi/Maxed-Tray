@@ -34,7 +34,7 @@ include "../db_conn.php";
 
             $_SESSION['username']=$username;
             $_SESSION['auth']=1;
-            header("location:home.php");
+            header("location:users.php");
         }
         else
         {
@@ -51,17 +51,17 @@ include "../db_conn.php";
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="./css/signin.css">
 </head>
 <body>
 <div class="container">
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center body">
         <div class="card">
             <div class="card-header">
                 <h3>Sign In</h3>
             </div>
             <div class="card-body">
-                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="form">
                     <div class="input-group form-group">
                         <input type="text" class="form-control" placeholder="username" name="email">
                         

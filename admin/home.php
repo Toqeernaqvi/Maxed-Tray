@@ -30,7 +30,7 @@ include'../db_conn.php';
     <div class="container homebody">
         <div class="row">
             <div class="col-md-12">
-                <h1>Welcome To The Admibbn Panel</h1>
+                <h1>Welcome To The Admin Panel</h1>
             </div>
         </div>
     </div>
