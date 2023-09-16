@@ -58,7 +58,7 @@ include "../db_conn.php";
     <div class="d-flex justify-content-center body">
         <div class="card">
             <div class="card-header">
-                <h3>Sign In</h3>
+                <h3>Admin Login</h3>
             </div>
             <div class="card-body">
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="form">
@@ -66,7 +66,7 @@ include "../db_conn.php";
                         <input type="text" class="form-control" placeholder="username" name="email">
                         
                     </div>
-                    <div class="input-group form-group">
+                    <div class="input-group form-group mb-3">
                         <input type="password" class="form-control" placeholder="password" name="password">
                     </div>
                     <div class="form-group">
