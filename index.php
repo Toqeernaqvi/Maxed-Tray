@@ -12,9 +12,9 @@
 
 <body>
   <main class="login">
-    <!-- Show Request Response
+    <!-- Show Request Response -->
     <?php if (isset($_GET['success'])) { ?> <p class="success"><?php echo $_GET['success']; ?></p> <?php } ?>
-    <?php if (isset($_GET['error'])) { ?> <p class="error-msg" style="color: red;"><?php echo $_GET['error']; ?></p> <?php } ?> -->
+    <?php if (isset($_GET['error'])) { ?> <p class="error-msg" style="color: red;"><?php echo $_GET['error']; ?></p> <?php } ?>
 
     <section class="form-section">
       <h1>Login</h1>

@@ -34,7 +34,7 @@ include "../db_conn.php";
 
             $_SESSION['username']=$username;
             $_SESSION['auth']=1;
-            header("location:users.php");
+            header("location:home.php");
         }
         else
         {
@@ -63,7 +63,7 @@ include "../db_conn.php";
             <div class="card-body">
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="form">
                     <div class="input-group form-group">
-                        <input type="text" class="form-control" placeholder="username" name="email">
+                        <input type="text" class="form-control" placeholder="email" name="email">
                         
                     </div>
                     <div class="input-group form-group mb-3">

@@ -24,7 +24,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 		// hashing the password
 		$pass = md5($pass);
 
-		$sql = "SELECT * FROM users WHERE email='$email' AND password='$pass' AND here status = '1'";
+		$sql = "SELECT * FROM users WHERE email='$email' AND password='$pass' AND status = '1'";
 
 		$result = mysqli_query($conn, $sql);
 
