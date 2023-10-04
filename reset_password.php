@@ -14,8 +14,15 @@ if (isset($_POST['password']) && isset($_POST['registration_key']) && isset($_PO
 
     $result = mysqli_query($conn, $sql);
 
+    echo $result;
+
     if ($result) {
-        header("Location: index.php?success=Password updated successfully. please login with your new password");
+        $affected_rows = mysqli_affected_rows($conn);
+        if ($affected_rows > 0) {
+            header("Location: index.php?success=Password updated successfully. please login with your new password");
+        } else {
+			header("Location: reset_password_page.php?error=Incorrect Email or Registration Key");
+        }
         exit();
     } else {
         // Handle the case where the SQL query fails
