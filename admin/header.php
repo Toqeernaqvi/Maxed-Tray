@@ -11,6 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="/js/script.js"></script>
 
 		<!-- Custom Stylesheet Link -->
 		<link rel="stylesheet" href="css/style.css">
@@ -20,7 +21,7 @@
 		<h1 class=" admin-heading">Admin Panel</h1>
 		<ul class="navbar-nav">
 		  <li class="nav-item">
-				<a class="nav-link u" href="users.php">Users</a>
+				<a class="nav-link user-tab" href="users.php">Users</a>
 			</li>
 			<li class="nav-item">
 			<a class="" href="logout.php">Logout</a>

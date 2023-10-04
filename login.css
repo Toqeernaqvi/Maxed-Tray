@@ -16,12 +16,13 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-.form-section h1,.fp-form-section h1 {
+.form-section h1,
+.fp-form-section h1 {
   color: #082a44;
   font-size: 32px;
   margin-bottom: 8px;
 }
-.fp-form-section h1{
+.fp-form-section h1 {
   font-size: 26px;
   margin-bottom: 28px;
 }
@@ -36,26 +37,32 @@ body {
   font-weight: 600;
 }
 
-.login-form,.fp-form {
+.login-form,
+.fp-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 16px;
+  width: 500px;
 }
 
-.login-form label , .fp-form label{
+.login-form label,
+.fp-form label {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  width: 100%;
 }
 
-.login-form label p , .fp-form label p {
+.login-form label p,
+.fp-form label p {
   color: #082a44;
   font-weight: 600;
 }
 
-.login-form label input , .fp-form label input{
-  width: 500px;
+.login-form label input,
+.fp-form label input {
+  width: 100%;
   border-radius: 9px;
   color: #082a44;
   background: #f5fafd;
@@ -65,19 +72,22 @@ body {
   font-size: 16px;
 }
 
-.login-form label input:focus, .fp-form label input:focus {
+.login-form label input:focus,
+.fp-form label input:focus {
   outline: none;
 }
 
-.pass-container, .fp-pass-container {
+.pass-container,
+.fp-pass-container {
   position: relative;
 }
 
-.fp-pass-container{
+.fp-pass-container {
   margin-bottom: 32px;
 }
 
-.pass-container img, .fp-pass-container img {
+.pass-container img,
+.fp-pass-container img {
   width: 20px;
   height: 20px;
   position: absolute;
@@ -85,15 +95,15 @@ body {
   top: 38px;
 }
 
-.forgot{
+.forgot {
   text-decoration: none;
-  color: #04477B;
+  color: #04477b;
   font-weight: 500;
   margin-bottom: 12px;
 }
 
-.login-form button ,
-.fp-form button{
+.login-form button,
+.fp-form button {
   padding: 16px 86px;
   background: #0b4877;
   border: none;
@@ -125,4 +135,33 @@ body {
 
 .error {
   border: 1px solid red !important;
+}
+
+@media (max-width: 530px) {
+  .login-form,
+  .fp-form {
+    width: 400px;
+  }
+}
+@media (max-width: 430px) {
+  .login-form,
+  .fp-form {
+    width: 350px;
+  }
+
+  html {
+    font-size: 90%;
+  }
+  
+  .form-section h1,
+  .fp-form-section h1 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 430px) {
+  .login-form,
+  .fp-form {
+    width: 280px;
+  }
 }
