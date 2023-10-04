@@ -6,15 +6,16 @@ if (isset($_POST['password']) && isset($_POST['registration_key']) && isset($_PO
     $password = $_POST['password'];
     $registration_key = $_POST['registration_key'];
     $email = $_POST['email'];
+    $password = md5($password);
 
     $sql = "UPDATE users
             SET password = '$password'
-            WHERE email = '$userId' AND registration_key = '$registration_key'";
+            WHERE email = '$email' AND registration_key = '$registration_key'";
 
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
-        header("Location: index.php?success=User updated successfully");
+        header("Location: index.php?success=Password updated successfully. please login with your new password");
         exit();
     } else {
         // Handle the case where the SQL query fails
