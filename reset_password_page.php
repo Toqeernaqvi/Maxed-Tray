@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="./login.css">
-  <script src="./src/login.js" defer></script>
+  <script src="./src/reset-pass.js" defer></script>
 
   <title>Reset Password | Maxed Tray</title>
 </head>

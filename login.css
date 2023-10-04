@@ -41,12 +41,14 @@ body {
   flex-direction: column;
   justify-content: center;
   gap: 16px;
+  width: 500px;
 }
 
 .login-form label , .fp-form label{
   display: flex;
   flex-direction: column;
   gap: 4px;
+  width: 500px;
 }
 
 .login-form label p , .fp-form label p {
