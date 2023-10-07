@@ -1,8 +1,6 @@
-const usersBtn = document.querySelector('.user-tab')
-const url = document.URL
+let userBtn = document.querySelector('.user-tab')
+const url = document.URL.includes('users.php')
 
-if(url === 'http://localhost/Maxed-Tray/admin/users.php') {
-    usersBtn.classList.add('highlighted');
+if(url) {
+    userBtn.classList.add('highlighted');
 }
-
-  
