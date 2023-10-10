@@ -56,11 +56,11 @@ imgInputFeild.addEventListener("change", () => {
 
 uploadBtn.addEventListener("click", () => {
   splitButton.classList.remove("hidden");
+  document.querySelector(".croppie-container").style.opacity = "0";
 });
 
 splitButton.addEventListener("click", () => {
   downloadButton.classList.remove("hidden");
-  console.log(downloadButton);
   reUpLoadBtn.classList.remove("hidden");
   uploadBtn.classList.add("hidden");
 });
@@ -169,7 +169,7 @@ downloadButton.addEventListener("click", () => {
     // Create a temporary link for download
     const downloadLink = document.createElement("a");
     downloadLink.href = dataUrl;
-    downloadLink.download = `split_image_${index + 1}.jpg`; // Specify the desired filename
+    downloadLink.download = `template_${index + 1}.jpg`; // Specify the desired filename
 
     // Programmatically trigger the download
     downloadLink.click();

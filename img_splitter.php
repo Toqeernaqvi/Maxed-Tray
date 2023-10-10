@@ -37,7 +37,7 @@ SESSION_START();
   </head>
   <body>
     <nav>
-      <h1 class="logo">Maxed Tray</h1>
+      <h1 class="logo">MaxTray</h1>
        <div>
         <div>
           <img src="./assets/icons/user.svg" alt="user icon">
