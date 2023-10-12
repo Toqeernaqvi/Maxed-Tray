@@ -46,4 +46,5 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 	}
 } else {
 	header("Location: index.php");
-}
+	
+} 
