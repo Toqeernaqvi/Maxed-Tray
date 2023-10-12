@@ -123,6 +123,7 @@ splitButton.addEventListener("click", () => {
       const splitImg = new Image();
       splitImg.src = splitCanvas.toDataURL();
       splitImg.className = "splitImage";
+      // splitImg.style.transform = "scale(.3)";
       splitImages.push(splitImg);
     }
 
@@ -130,6 +131,7 @@ splitButton.addEventListener("click", () => {
     const imageContainer = document.getElementById("imageContainer");
     imageContainer.innerHTML = "";
     splitImages.forEach((splitImg) => imageContainer.appendChild(splitImg));
+    imageContainer.style.transform = "scale(.3)";
 
     // Enable the download button
     const downloadButton = document.getElementById("downloadButton");

@@ -134,6 +134,17 @@ button {
 
 .cr-boundary {
   border: 3px solid black;
+  position: relative;
+}
+.cr-boundary::after {
+  content: "";
+  width: 450px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(50%, -50%);
+  background: #000;
 }
 
 /* ====================   log in ================================ */
