@@ -8,10 +8,18 @@ const uploadBtn = document.querySelector("#use");
 const reUpLoadBtn = document.querySelector(".re-upload");
 const croppieContainer = document.querySelector(".croppie-container");
 const selectedImg = document.querySelector("#my-img");
-
+const rotateBlock = document.querySelector(".rotate-block");
+const imgCheckBox = document.querySelector("#img-2nd");
 let uploadedImage = null;
 let splitImages = [];
 
+// display rotate image 
+function rotateImage(imgChkBox){
+  document.querySelector('#imageContainer img:nth-child(2)').style.transform = (imgChkBox.checked) ? "rotateX(180deg)" : "rotateX(0deg)";
+}
+
+
+// function to read url
 function readURL(input) {
   if (input.files && input.files[0]) {
     imageContainer.innerHTML = "";
@@ -19,16 +27,9 @@ function readURL(input) {
     reader.onload = function (e) {
       $("#my-image").attr("src", e.target.result);
       var resize = new Croppie($("#my-image")[0], {
-        viewport: {
-          width: 452,
-          height: 906,
-        },
-        boundary: {
-          width: 450,
-          height: 911,
-        },
+        viewport: { width: 452, height: 906,},
+        boundary: { width: 450, height: 911,},
         enforceBoundary: false,
-
         // showZoomer: false,
         enableResize: true,
         enableOrientation: true,
@@ -62,8 +63,11 @@ uploadBtn.addEventListener("click", () => {
 splitButton.addEventListener("click", () => {
   downloadButton.classList.remove("hidden");
   reUpLoadBtn.classList.remove("hidden");
+  rotateBlock.classList.remove("hidden");
   uploadBtn.classList.add("hidden");
 });
+
+
 
 const mmToPixels = (mm) => {
   const dpi = 96; // Standard DPI for most screens
@@ -131,7 +135,8 @@ splitButton.addEventListener("click", () => {
     const imageContainer = document.getElementById("imageContainer");
     imageContainer.innerHTML = "";
     splitImages.forEach((splitImg) => imageContainer.appendChild(splitImg));
-    imageContainer.style.transform = "scale(.3)";
+    // imageContainer.style.transform = "scale(.3)";
+    // imageContainer.style.transform = "rotateX(180deg)";
 
     // Enable the download button
     const downloadButton = document.getElementById("downloadButton");
@@ -139,9 +144,13 @@ splitButton.addEventListener("click", () => {
   };
 });
 
+
+
+
 // Download button click event handler
 downloadButton.addEventListener("click", () => {
   if (!splitImages || splitImages.length !== 2) return;
+
 
   // Loop through the splitImages array
   for (let index = 0; index < splitImages.length; index++) {
@@ -155,16 +164,28 @@ downloadButton.addEventListener("click", () => {
     // Fill the canvas with white background
     context.fillStyle = "#fff"; // Set to white color
     context.fillRect(0, 0, canvas.width, canvas.height);
-
-    // Draw the image onto the canvas
-    context.drawImage(
-      splitImages[index],
-      0,
-      0,
-      splitImages[index].width,
-      splitImages[index].height
-    );
-
+ if (index === 1 && imgCheckBox.checked) {
+  context.save(); // Save the current transformation state
+  context.translate(canvas.width / 2, canvas.height / 2); // Set the rotation point to the center of the canvas
+  context.rotate((180 * Math.PI) / 180); // Rotate 45 degrees (convert degrees to radians)
+  context.drawImage(
+    splitImages[index],
+    -splitImages[index].width / 2,
+    -splitImages[index].height / 2,
+    splitImages[index].width,
+    splitImages[index].height
+  );
+  context.restore(); // Restore the saved transformation state
+} else {
+  // Draw the first image without rotation
+  context.drawImage(
+    splitImages[index],
+    0,
+    0,
+    splitImages[index].width,
+    splitImages[index].height
+  );
+}
     // Convert canvas content to a data URL
     const dataUrl = canvas.toDataURL("image/jpeg"); // You can change the format if needed
 
@@ -176,4 +197,7 @@ downloadButton.addEventListener("click", () => {
     // Programmatically trigger the download
     downloadLink.click();
   }
-});
+}
+);
+
+

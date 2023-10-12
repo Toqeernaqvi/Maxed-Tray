@@ -57,6 +57,11 @@ SESSION_START();
         <button id="downloadButton" class="hidden">
           Download Split Images
         </button>
+
+        <div class="rotate-block hidden">
+          <input type="checkbox" id="img-2nd" name="checkbox" onclick="rotateImage(this)">
+          <label for="img-2nd">Rotate 2nd  Image (180 deg)</label>
+        </div>
       </div>
       <div id="imageContainer">
         <div class="drop-zone">
